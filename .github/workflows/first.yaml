@@ -1,0 +1,18 @@
+name: First Demo Action
+
+on : 
+  push:
+    branches:
+      -production
+
+
+ jobs :
+    demo-job:
+        runs-on : ununtu-latest
+        steps :
+          run : echo "action started"
+          -name : checkout
+          uses: actions/checkout@v4
+          run:
+            echo add other action to build
+            echo test,and deploy your project
