@@ -3,12 +3,12 @@ name: First Demo Action
 on : 
   push:
     branches:
-      -production
+      -master
 
 
  jobs :
     demo-job:
-        runs-on : ununtu-latest
+        runs-on : ubuntu-latest
         steps :
           run : echo "action started"
           -name : checkout
