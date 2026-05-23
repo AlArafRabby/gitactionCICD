@@ -1,18 +1,22 @@
 name: First Demo Action
 
-on : 
+on:
   push:
     branches:
-      -master
+      - master
 
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
 
- jobs :
-    demo-job:
-        runs-on : ubuntu-latest
-        steps :
-          run : echo "action started"
-          -name : checkout
-          uses: actions/checkout@v4
-          run:
-            echo add other action to build
-            echo test,and deploy your project
+    steps:
+      - name: Start action
+        run: echo "action started"
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build, test, and deploy
+        run: |
+          echo "add other action to build"
+          echo "test, and deploy your project"
